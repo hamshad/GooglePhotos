@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack } from 'expo-router';
-import {} from 'react-native';
+import { Text, FlatList, Image } from 'react-native';
 import * as MediaLibrary from 'expo-media-library';
 
 export default function Home() {
@@ -25,6 +25,15 @@ export default function Home() {
   return (
     <>
       <Stack.Screen options={{ title: 'Photos' }} />
+      <FlatList
+        data={localAssets}
+        numColumns={4}
+        contentContainerClassName='gap-0.5'
+        columnWrapperClassName='gap-0.5'
+        renderItem={({item}) => (
+          <Image source={{uri: item.uri}} className='w-1/4 aspect-square'/>
+        )}
+      />
     </>
   );
 }

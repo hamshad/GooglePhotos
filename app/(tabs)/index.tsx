@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack } from 'expo-router';
+import { Link, Stack } from 'expo-router';
 import { Text, FlatList, Image } from 'react-native';
 import { useMedia } from '~/providers/MediaProvider';
 
@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <>
       <Stack.Screen options={{ title: 'Photos' }} />
+      <Link href={"/asset"}>Go to asset page</Link>
       <FlatList
         data={localAssets}
         numColumns={4}
